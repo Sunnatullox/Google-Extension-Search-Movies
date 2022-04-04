@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Movies Search!",
+    "version": "1.0.0",
+    "description": "Search for all your fovaurite Movies",
+    "icons":{
+        "16":"tv.png",
+        "48":"tv.png",
+        "128":"tv.png"
+    },
+    "action":{
+        "default_icon":{
+            "16":"tv.png",
+            "24":"tv.png",
+            "32":"tv.png"
+        },
+        "default_title":"Movies Search",
+        "default_popup":"popup/popup.html"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "permissions":["contextMenus","search","tabs", "storage","tts"],
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["contentScript.js"],
+            "css":["contentScript.css"]
+        }
+    ]
+}
